@@ -4,11 +4,12 @@
 # 1. Create a Git Repository Structure
 
 * Example:
-
+```
 hello-world/
 ├── deployment.yaml
 ├── service.yaml
 └── argocd-app.yaml
+```
 # 2. Kubernetes Deployment
 
 * deployment.yaml
@@ -109,7 +110,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 * Open:
 ```
 https://localhost:8080
-``
+```
 * Get admin password:
 ```
 kubectl get secret argocd-initial-admin-secret \
