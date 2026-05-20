@@ -13,7 +13,7 @@ hello-world/
 # 2. Kubernetes Deployment
 
 * deployment.yaml
-
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,10 +33,11 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+```
 # 3. Kubernetes Service
 
 * service.yaml
-
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -49,6 +50,7 @@ spec:
       port: 80
       targetPort: 80
   type: ClusterIP
+```
 # 4. ArgoCD Application Manifest
 
 * argocd-app.yaml
@@ -57,7 +59,7 @@ Replace:
 
 YOUR_GIT_REPO_URL
 branch if needed
-
+```
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -79,6 +81,7 @@ spec:
     automated:
       prune: true
       selfHeal: true
+```
 # 5. Install ArgoCD
 
 * Official docs:
@@ -120,12 +123,12 @@ kubectl get secret argocd-initial-admin-secret \
 What Happens
 
 # ArgoCD will:
-
+```
 * Watch your Git repository
 * Detect Kubernetes YAML files
 * Sync them automatically to the cluster
 * Keep cluster state aligned with Git
-
+```
 # This is the core GitOps workflow.
 
 * Example Workflow
@@ -142,7 +145,7 @@ git push
 # Recommended Next Steps
 
 * After this hello-world setup, usually people move to:
-
+```
 * Helm-based apps
 * Kustomize overlays
 * Multiple environments (dev/stage/prod)
@@ -150,3 +153,4 @@ git push
 * ArgoCD Image Updater
 * Private Git repos
 * RBAC & SSO
+```
