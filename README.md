@@ -1,4 +1,4 @@
-# How to check expense app details in mysql server
+* How to check expense app details in mysql server
 
 * Note: We can't do any changes existing images like nginx:4.5
 ```
